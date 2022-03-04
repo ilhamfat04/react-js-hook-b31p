@@ -5,7 +5,6 @@ export default function ExampleComp(props) {
     const { user } = props
 
     console.log("Props examplecomp", user?.email);
-    const [state, setState] = useState(null)
 
     useEffect(() => {
         console.log("Example comp did update");

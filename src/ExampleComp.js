@@ -1,16 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Container } from 'react-bootstrap'
 
-export default function ExampleComp(props) {
-    const { user } = props
+import { UserContext } from './context/userContext'
 
-    console.log("Props examplecomp", user?.email);
+export default function ExampleComp() {
+    // const { user } = props
 
-    useEffect(() => {
-        console.log("Example comp did update");
-        console.log("Data is update");
-        console.log(user);
-    }, [props])
+    const [state, dispacth] = useContext(UserContext)
+    console.log(state)
 
-    return <Container>Email : {props.user.email}</Container>
+    // console.log("Props examplecomp", user?.email);
+
+    // useEffect(() => {
+    //     console.log("Example comp did update");
+    //     console.log("Data is update");
+    //     console.log(user);
+    // }, [props])
+
+    return <Container>Email : {state?.user?.email}</Container>
 }
